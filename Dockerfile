@@ -5,10 +5,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copier le fichier JAR généré dans le conteneur
-COPY demo.jar app/demo.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Exposer le port sur lequel l'application écoute
 EXPOSE 8086
 
 # Définir la commande pour exécuter l'application
-ENTRYPOINT ["java", "-jar", "demo.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
